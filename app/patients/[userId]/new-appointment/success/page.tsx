@@ -12,7 +12,7 @@ import { getUser } from '@/lib/actions/patient.actions';
 async function SuccessPage({params : {userId} , searchParams} : SearchParamProps) {
     const appointmentId = (searchParams?.appointmentId as string) || "";
     const appointment =await getAppointment(appointmentId);
-    const doctor = Doctors.find((doc)=> doc.name === appointment.primaryPhysician) 
+    const doctor = Doctors.find((doc) => doc.name === appointment.primaryPhysician)!;
 
     const user = await getUser(userId);
         Sentry.metrics.set("user_view_appointment_success",user.name);
