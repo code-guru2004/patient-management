@@ -3,9 +3,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button } from "@/components/ui/button";
+
 import { Form, FormControl } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+
 import CustomFormField from "../CustomFormField";
 import SubmitBtn from "../ui/SubmitBtn";
 import { useState } from "react";
@@ -197,7 +197,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             control={form.control}
             name="primaryPhysician"
             label="Primary Physician"
-            placeholder="Dr. XYZ"
+            placeholder="Choose Your Primary Physician"
           >
             {Doctors.map((doctor) => (
               <SelectItem key={doctor.name} value={doctor.name}>

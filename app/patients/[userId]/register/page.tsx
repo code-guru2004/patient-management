@@ -2,8 +2,6 @@
 import RegisterForm from '@/components/forms/RegisterForm'
 import { getUser } from '@/lib/actions/patient.actions'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import React from 'react'
 import * as Sentry from '@sentry/nextjs'
 async function Register( { params : { userId } } : SearchParamProps) {

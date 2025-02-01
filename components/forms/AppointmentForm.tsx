@@ -8,7 +8,7 @@ import {Form} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import CustomFormField from "../CustomFormField";
 import SubmitBtn from "../ui/SubmitBtn";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patient.actions";
@@ -23,7 +23,7 @@ import { Appointment } from "@/types/appwrite.types";
 
 const AppointmentForm = ({userId,patientId,type= "create",appointment,setOpen}: { userId: string; patientId:string; type:"create"|"cancel"|"schedule";
   appointment?:Appointment;
-  setOpen: (open: boolean)=>void;
+  setOpen?: Dispatch<SetStateAction<boolean>>;
 }) => {
     const router = useRouter();
     const [isLoading , setIsLoading] = useState(false)

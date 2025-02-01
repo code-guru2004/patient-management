@@ -8,6 +8,7 @@ import Link from "next/link";
 import * as Sentry from '@sentry/nextjs'
 import AppointmentForm from "@/components/forms/AppointmentForm";
 
+
 export default async function NewAppointment({ params: { userId } }: SearchParamProps) {
   const patient = await getPatient(userId);
       Sentry.metrics.set("user_view_register",patient?.name);
@@ -25,10 +26,10 @@ export default async function NewAppointment({ params: { userId } }: SearchParam
           />
 
           <AppointmentForm
-            type="create"
-            userId={userId}
             patientId={patient?.$id}
-            />
+            userId={userId}
+            type="create"
+          />
 
             <p className="justify-items-end text-dark-600 xl:text-left">
               © 2024 CarePluse
